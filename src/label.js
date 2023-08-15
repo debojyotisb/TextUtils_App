@@ -29,6 +29,7 @@ export default function Label  (props) {
     }
   };
   
+  
 
     const toUppercase = () => {
         setText(text.toUpperCase(""))
@@ -40,6 +41,14 @@ export default function Label  (props) {
 
     const clearText= () => {
       setText("")
+    }
+
+    const handleCopy = () => {
+      console.log("Copied")
+      var text = document.getElementById("myBox")
+      text.select();
+      navigator.clipboard.writeText(text.value);
+      console.log(alert("Text Copied"))
     }
 
     
@@ -76,6 +85,7 @@ export default function Label  (props) {
         <textarea
           className="form-control m-1 border border-black"
           placeholder="Write or Paste Your Text Here.."
+          id='myBox'
           rows="8"
           value={text}
           onChange={handleChange}
@@ -95,9 +105,7 @@ export default function Label  (props) {
         <button
           type="button"
           className="btn btn-primary m-2"
-          onClick={toLowercase}>
-          To-Lowercase
-        </button>
+          onClick={toLowercase}> To-Lowercase </button>
 
         <button
           type="button"
@@ -106,8 +114,16 @@ export default function Label  (props) {
 
         <button
           type="button"
-          className="btn btn-primary m-2" onClick={handleUndo}> Undo </button>
-      </div>
+          className="btn btn-primary m-2" 
+          onClick={handleUndo}> Undo </button>
+
+        <button
+          type="button"
+          className="btn btn-primary m-2" 
+          onClick={handleCopy}> Copy </button>
+
+        </div>
+      
       <div className="m-5 ">
         <h2 className="font-monospace">Text Summary</h2>
         
