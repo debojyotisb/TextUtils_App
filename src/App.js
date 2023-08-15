@@ -4,15 +4,14 @@ import './App.css';
 
 function App() {
   return <>
-    <div>
-    <Navbar title= "TextUtils"/>;
-    <Label />;
+    <div >
+    <Navbar title= "Word Counter"/>
+    </div>
+    <div className='container p-1'>
+    <Label heading="Enter Your Text Ternsform Below Mode.. "/>
     </div>
     
-    <div  classNameName="App" >
-      <h1> Hello SB</h1>
-     
-    </div>
+    
   </>
 }
 
