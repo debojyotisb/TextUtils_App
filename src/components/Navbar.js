@@ -1,7 +1,7 @@
 // import {myStyle} from './label';
 
 import React, { useState } from "react"
-import "./App.css";
+import "../App.css";
 
 export default function Navbar (props) {
 
@@ -11,8 +11,7 @@ export default function Navbar (props) {
   //   border: 'gray',
     
   // })
-  
-  const [btntext, setBtnText] = useState("Dark Mode")
+
 
   // const toggleStyle = () => {
   //   if (navStyle.color == 'white'){
@@ -21,14 +20,14 @@ export default function Navbar (props) {
   //     color: 'white',
   //     // border: '1px solid black',
   //     })
-  //     setBtnText("Light Mode")
+  //     
   //   } else{
   //       setNavStyle({
   //         backgroundColor: 'white',
   //         color: 'black',
   //         // border: '1px solid white',
   //         })
-  //     setBtnText("Dark Mode")
+  //   
 
   //     }
   // }
@@ -36,7 +35,7 @@ export default function Navbar (props) {
     return ( 
     <div >
 
-    <nav className="navbar navbar-expand-lg bg-body-tertiary " >
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} `} >
     
     <div className="container-fluid" 
     // style={navStyle}
@@ -70,25 +69,19 @@ export default function Navbar (props) {
         
         <li className="nav-item dropdown" >
           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
-          // style={navStyle}
+      
           
           >
             Expand
           </a>
-          <ul className="dropdown-menu" 
-          // style={navStyle}
-          >
-            <li><a className="dropdown-item" href="#" 
-            
-            // style={navStyle}
-            
-            >About</a></li>
+          <ul className="dropdown-menu" style={{backgroundColor: props.mode === 'light'?"white":"pink"}}>
+            <li><a className="dropdown-item" href="#">About</a></li>
 
             {/* <li><a className="dropdown-item" href="#">Another action</a></li> */}
             
             <li><hr className="dropdown-divider"/></li>
             <li><a className="dropdown-item" href="#"
-            //  style={navStyle}
+            
              >Something else here</a></li>
           </ul>
         </li>
@@ -101,9 +94,7 @@ export default function Navbar (props) {
 
       <button className="btn btn-primary " type="button"
       //  style={navStyle}
-      //  onClick={toggleStyle}
-
-       >{btntext}</button>
+       onClick={props.toggleMode} > {props.mode === 'light'?"Dark Mode":"Light Mode"} </button>
 
       
     </div>
