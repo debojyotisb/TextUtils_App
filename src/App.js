@@ -3,7 +3,12 @@ import Label from './components/label';
 import './App.css';
 import Alert from './components/Alert';
 import About from './components/About';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light') //whether dark mode is enable or not 
@@ -32,17 +37,21 @@ function App() {
   };
 
   return <>
-    <div >
-    <Navbar title= "Word Counter" mode={mode} toggleMode = {toggleMode}/>
-    </div>
+
+  <Router>
+  <Navbar title= "Word Counter" mode={mode} toggleMode = {toggleMode}/>
     <Alert alert={alert} />
-    <div className='container p-1'>
-    <Label heading="Enter Your Text Ternsform Below Mode.. " mode={mode} showAlert={showAlert} />
-    </div>
-    <About className='container'/>
     
     
+    <Routes>
+      <Route exact path="/" element={<Label heading="Enter Your Text To Transform Below Mode.. " mode={mode} showAlert={showAlert} />}/>
+    <Route exact path="/about" element={<About mode=
+    {mode} />} />
+
+    </Routes>
     
+
+  </Router>
   </>
 }
 

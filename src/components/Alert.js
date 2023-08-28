@@ -9,7 +9,7 @@ export default function Alert (props) {
     }
     return (
         <div style={{height: "30px"}}>
-      { props.alert && <div class="alert alert-success" role="alert">
+      { props.alert && <div className="alert alert-success" role="alert">
         <strong>{capitalize(props.alert.type)}</strong>:{props.alert.msg}
         </div>}
         </div>
