@@ -130,8 +130,7 @@ export default function Label  (props) {
         <button
           type="button"
           className="btn btn-primary m-2" 
-          onClick={handleUndo}
-          disabled={text.length <1 }> Undo </button>
+          onClick={handleUndo} > Undo </button>
 
         <button
           type="button"
