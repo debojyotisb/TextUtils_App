@@ -112,34 +112,38 @@ export default function Label  (props) {
         <button
           type="button"
           className="btn btn-primary m-2"
-          onClick={toUppercase} >
-          To-Uppercase
-        </button>
+          onClick={toUppercase} 
+          disabled={text.length < 1} > To-Uppercase </button>
 
         <button
           type="button"
           className="btn btn-primary m-2"
-          onClick={toLowercase}> To-Lowercase </button>
+          onClick={toLowercase}
+          disabled={text.length <1 }> To-Lowercase </button>
 
         <button
           type="button"
           className="btn btn-primary m-2"
-          onClick={clearText}> Clear </button>
-
-        <button
-          type="button"
-          className="btn btn-primary m-2" onClick={handleUndo}> Undo </button>
+          onClick={clearText}
+          disabled={text.length <1 }> Clear </button>
 
         <button
           type="button"
           className="btn btn-primary m-2" 
-          onClick={handleCopy}> Copy </button>
+          onClick={handleUndo}
+          disabled={text.length <1 }> Undo </button>
+
+        <button
+          type="button"
+          className="btn btn-primary m-2" 
+          onClick={handleCopy}
+          disabled={text.length <1 }> Copy </button>
         
         <button
           type="button"
           className="btn btn-primary m-2" 
-          onClick={handleCapitalize}> To-Capitalize Word
-        </button>
+          onClick={handleCapitalize}
+          disabled={text.length < 1} > To-Capitalize Word </button>
 
     </div>
 
