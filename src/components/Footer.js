@@ -2,7 +2,7 @@ import '../App.css';
 
 export default function Footer (props) {
     return (
-    <footer className='container mb-5' style={{color: props.mode === 'light'?"black":"wheat", display: 'flex', justifyContent: 'center'}}>
+    <footer className='container' style={{color: props.mode === 'light'?"black":"wheat", display: 'flex', justifyContent: 'center', marginBottom: '15px'}}>
         
         <small>&copy; No Copyright Issue, Feel free to use 👌 </small>
         <a href='https://github.com/debojyotisb/TextUtils_App'> 
