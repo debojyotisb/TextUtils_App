@@ -9,6 +9,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import Footer from './components/Footer';
 
 function App() {
   const [mode, setMode] = useState('light') //whether dark mode is enable or not 
@@ -50,8 +51,9 @@ function App() {
 
     </Routes>
     
-
   </Router>
+  <Footer mode={mode} />
+
   </>
 }
 

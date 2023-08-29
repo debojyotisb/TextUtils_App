@@ -17,8 +17,6 @@ export default function Label  (props) {
          // Store the current state in history when input changes
     };
 
-
-
     const toUppercase = () => {
         setText(text.toUpperCase(""))
         props.showAlert("Converted to upper case", "success")
@@ -60,10 +58,25 @@ export default function Label  (props) {
       setText(resultToString);
     }
     
+    const handleExtractLinks = () => {
+      
+    }
 
-    
+    const handleExtractNumbers = () => {
+      
+    }
 
-    
+    const handleExtraSpaces = () => {
+      
+    }
+
+    const handleSpecialCharacters = () => {
+      
+    }
+
+    const handleFindReplace = () => {
+      
+    }
 
     // let  myStyle = {
     //   backgroundColor: 'black',
@@ -102,13 +115,13 @@ export default function Label  (props) {
           cols="40"
           value={text}
           onChange={handleChange}
-          style={{backgroundColor: props.mode === 'light'?"white":"#383a4a", color: props.mode === 'light'?"black":"white"}}>
+          style={{backgroundColor: props.mode === 'light'?"white":"#62699b", color: props.mode === 'light'?"black":"white"}}>
           </textarea>
         
         </form>
         </div>
 
-      <div>
+      <div className='container m-5'>
         <button
           type="button"
           className="btn btn-primary m-2"
@@ -144,6 +157,38 @@ export default function Label  (props) {
           onClick={handleCapitalize}
           disabled={text.length < 1} > To-Capitalize Word </button>
 
+          <button
+          type="button"
+          className="btn btn-primary m-2" 
+          onClick={handleExtractLinks}
+          disabled={text.length < 1} > Extract Links </button>
+          
+          <button
+          type="button"
+          className="btn btn-primary m-2" 
+          onClick={handleExtractNumbers}
+          disabled={text.length < 1} > Extract Numbers </button>
+          
+          <button
+          type="button"
+          className="btn btn-primary m-2" 
+          onClick={handleExtraSpaces}
+          disabled={text.length < 1} > Remove Extra Spaces </button>
+          
+          <button
+          type="button"
+          className="btn btn-primary m-2" 
+          onClick={handleSpecialCharacters}
+          disabled={text.length < 1} > Remove Special Characters </button>
+          
+          <button
+          type="button"
+          className="btn btn-primary m-2" 
+          onClick={handleFindReplace}
+          disabled={text.length < 1} > Find/Replace </button>
+
+             
+
     </div>
 
 
@@ -152,8 +197,7 @@ export default function Label  (props) {
         <p className="fw-light">
           Letters <span className='fw-bold'>{text.length}</span>,
           Words <span className='fw-bold'>{text.split(" ").filter((element) => {return element.length!==0}).length}</span>,
-          Comma ,
-          Full stop,
+          
         </p>
         <h4> Text Preview </h4>
         <p>{text.length>0?text:"Enter Something in the text Box to Preview it here.."}</p>

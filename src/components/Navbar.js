@@ -42,11 +42,7 @@ export default function Navbar (props) {
 
     <a className="navbar-brand" href="#" style={{fontSize: 45, fontWeight: "lighter"}}> {props.title}  </a>
 
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" 
-
-    // style={navStyle}
-    
-    >
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
       <span className="navbar-toggler-icon" ></span>
     </button>
     
@@ -80,7 +76,7 @@ export default function Navbar (props) {
 
       
 
-      <button className="btn btn-primary " type="button" onClick={props.toggleMode} > {props.mode === 'light'?"Dark Mode":"Light Mode"} </button>
+      <button className="btn btn-primary " type="button" onClick={props.toggleMode} style={{marginRight: '40px'}}> {props.mode === 'light'?"Dark Mode":"Light Mode"} </button>
 
       
     </div>
