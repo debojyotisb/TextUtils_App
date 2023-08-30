@@ -45,7 +45,7 @@ function App() {
     
     
     <Routes>
-      <Route exact path="/" element={<Label heading="Enter Your Text To Transform Below Mode.. " mode={mode} showAlert={showAlert} />}/>
+      <Route exact path="/" element={<Label heading="TextUtils - Word Counter, Character Counter, Capitalize Word, Remove Extra Spaces and more.. " mode={mode} showAlert={showAlert} />}/>
     <Route exact path="/about" element={<About mode=
     {mode} />} />
 

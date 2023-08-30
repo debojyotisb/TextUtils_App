@@ -6,6 +6,10 @@ import "../App.css";
 export default function Label  (props) {
     const [text, setText] = useState("");
     const [temp, setTemp] = useState("");
+    const [state, setState] = useState({
+      // The current state of the application.
+    });
+  
     
 
     // console.log("text uppercase", textUppercase);
@@ -67,7 +71,9 @@ export default function Label  (props) {
     }
 
     const handleExtraSpaces = () => {
-      
+      const result = text.replace(/\s+/g, " ")
+      // console.log("result", result)
+      setText(result)
     }
 
     const handleSpecialCharacters = () => {
@@ -77,6 +83,8 @@ export default function Label  (props) {
     const handleFindReplace = () => {
       
     }
+
+   
 
     // let  myStyle = {
     //   backgroundColor: 'black',
@@ -186,6 +194,8 @@ export default function Label  (props) {
           className="btn btn-primary m-2" 
           onClick={handleFindReplace}
           disabled={text.length < 1} > Find/Replace </button>
+          
+          
 
              
 
@@ -196,7 +206,7 @@ export default function Label  (props) {
         <h2 className="font-monospace">Text Summary</h2>
         <p className="fw-light">
           Letters <span className='fw-bold'>{text.length}</span>,
-          Words <span className='fw-bold'>{text.split(" ").filter((element) => {return element.length!==0}).length}</span>,
+          Words <span className='fw-bold'>{text.split(/\s+/).filter((element) => {return element.length!==0}).length}</span>,
           
         </p>
         <h4> Text Preview </h4>
